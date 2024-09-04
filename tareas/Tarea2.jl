@@ -22,14 +22,6 @@
 #-
 # ## Ejercicio 2
 #
-# - A partir de $\mathbb{D}_{x_0}u \cdot \mathbb{D}_{x_0}w$, obtengan la expresión para
-# $\mathbb{D}_{x_0}z = \mathbb{D}_{x_0}u / \mathbb{D}_{x_0}w$. Es decir, demuestren
-# el resultado obtenido para la división de duales.
-
-
-#-
-# ## Ejercicio 3
-#
 # - Definan una estructura en Julia `Dual` que represente a los números duales;
 # los nombres de los campos internos serán `fun` y `der`.
 # Por sencillez, pueden considerar que los campos de `Dual` son del tipo `Float64`,
@@ -61,22 +53,22 @@
 
 
 #-
-# ## Ejercicio 4
+# ## Ejercicio 3
 #
 # Definan una nueva función `dual(x_0)` cuyo resultado sea un `Dual` que corresponde
 # a la variable independiente $x$ evaluada en `x_0`. Con esta función
-# obtengan $g'(2)$ para la función
+# obtengan $f'(2)$ para la función
 # $$
-# g(x) = \frac{3x^2-8x+1}{7x^3-1}.
+# f(x) = \frac{3x^2-8x+1}{7x^3-1}.
 # $$
 
 
 #-
-# ## Ejercicio 5
+# ## Ejercicio 4
 #
 # - A partir de lo visto en clase, *extiendan* las funciones `sin(a::Dual)`,
 # `cos(a::Dual)`, `tan(a::Dual)`, `^(a::Dual, n::Int)`, `sqrt(a::Dual)`, `exp(a::Dual)`
-# y `log(a::Dual)`, al igual que `a^n`, con `a::Dual` y `n::Int`.
+# y `log(a::Dual)`, al igual que `a^n` (con `a::Dual` y `n::Int`).
 #
 # - Al igual que antes, construyan algún conjunto de pruebas que muestre, de manera
 # sencilla, que lo que hicieron da lo que uno esperaría obtener.
