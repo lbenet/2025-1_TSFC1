@@ -9,9 +9,9 @@
 # del mapeo, como por ejemplo los complejos).
 # La idea es definir la dinámica de $x\in\mathbb{R}^N$ a través de la función
 # $F_\mu$ y sus iterados, o aplicaciones repetidas, es decir,
-# \begin{equation}
+# $$
 # x_{n+1} = F_\mu (x_n).\tag{1}
-# \end{equation}
+# $$
 
 # En (1), $\mu$ representa uno o varios parámetros que uno puede variar,
 # y $x_n$ representa
@@ -34,6 +34,7 @@
 # y en general el $n$-ésimo iterado lo escribiremos $x_n=F_\mu(x_{n-1})=F^n_\mu(x_0)$.
 
 # Como ejemplo, consideraremos $F(x)=x^2+1$, y tendremos que
+# $$
 # \begin{align*}
 # x_1 & = F(x_0) = x_0^2+1, \\
 # x_2 & = F^2(x_0) = (x_0^2+1)^2+1,\\
@@ -41,6 +42,8 @@
 # x_4 & = F^4(x_0) = (((x_0^2+1)^2+1)^2+1)^2+1,\\
 # \vdots
 # \end{align*}
+# $$
+
 
 # Es claro que la notación $F^n(x)$ no significa la potencia $n$ del mapeo, si no el
 # $n$-ésimo iterado del mapeo, a partir de la condición inicial $x$.
@@ -59,9 +62,9 @@
 # de la condición inicial.
 # Otras órbitas no cambian: son los puntos fijos del mapeo, o soluciones
 # estacionarias. Los puntos fijos, evidentemente, satisfacen la ecuación
-# \begin{equation}
+# $$
 # F_\mu(x) = x.\tag{2}
-# \end{equation}
+# $$
 # En otras palabras, cada iterado coincide consigo mismo.
 
 # Por ejemplo, para el mapeo $G(x)=x^2-x-4$, los puntos fijos satisfacen $x^2-2x-4=0$, de
@@ -119,9 +122,9 @@ G(bx₋) - bx₋
 # de periodo 1.
 
 # Un punto que pertenece a una órbita de periodo $n$ satisface la ecuación
-# \begin{equation}
+# $$
 # F^n(x_0) = x_0.\tag{3}
-# \end{equation}
+# $$
 # Claramente, de la ecuación (3) concluimos que un punto de periodo
 # $n$ del mapeo $F$ es un punto fijo (de periodo 1) del mapeo definido por la función $F^n$.
 # Además, la ecuación (3) tiene *al menos* $n$ soluciones distintas.
@@ -387,9 +390,9 @@ analisis_grafico!(Plt1, x->sqrt(x), 3.6, 4, 0.0:1/32:5.2,
 # complicado), cerca de un punto fijo. Para hacer las cosas más sencillas,
 # consideraremos que el punto fijo es el cero, y el mapeo tiene la forma:
 
-# \begin{equation}
+# $$
 # F_\alpha(x) = \alpha x.\tag{4}
-# \end{equation}
+# $$
 
 
 # ### (a) $0<\alpha <1$.
@@ -434,9 +437,9 @@ x3[end], x4[end]
 # Para un mapeo lineal $x_{n+1}=\alpha x_n$, el mapeo define una sucesión
 # geométrica. Entonces, el $n$-ésimo iterado vendrá dado por:
 
-# \begin{equation}
+# $$
 # x_n = \alpha x_{n-1} = \dots = x_0 \alpha^n.\tag{5}
-# \end{equation}
+# $$
 
 # De aquí es claro que, si $|\alpha|<1$, el límite cuando $n\to\infty$ es 0,
 # el punto fijo. En este caso decimos que el punto fijo es **linealmente
@@ -456,9 +459,9 @@ x3[end], x4[end]
 # Como dijimos arriba, cualquier mapeo $F(x)$, alrededor de su punto
 # fijo, lo podemos escribir a primer orden como
 
-# \begin{equation}
+# $$
 # F(x_* + \delta) = x_* + \delta F'(x_*) + \cal{O}(\delta^2),\tag{6}
-# \end{equation}
+# $$
 
 # que precisamente es un mapeo lineal en $\delta$, donde el equivalente
 # de la pendiente $\alpha$, utilizada arriba, es $F'(x_*)$. Esto es,
@@ -476,15 +479,15 @@ x3[end], x4[end]
 # en el intervalo $[-1,1]$. Claramente, este mapeo tiene tiene una órbita de periodo 2
 # dada por $0, -1, 0, -1, \dots$. Cada uno de estos puntos, son puntos fijos de
 
-# \begin{equation}
-# F^2(x) = (x^2-1)^2-1 = x^2 (x^2-2),\tag{7}
-# \end{equation}
+# $$
+# F^2(x) = F(F(x)) = x^2-1)^2-1 = x^2 (x^2-2),\tag{7}
+# $$
 
 # esto es, ambos puntos (¡y sólo ellos!) satisfacen la ecuación
 
-# \begin{equation}
+# $$
 # F^2(x) - x = x(x^3-2x-1) = x(x+1)(x^2-x-1) = 0.\tag{8}
-# \end{equation}
+# $$
 
 f1 = x -> x^2-1        # Primer iterado
 f2 = x -> f1(f1(x))    # Segundo iterado
@@ -521,24 +524,24 @@ plot!(-1:1/16:1, identity, xaxis=("x", (-1.1, 1.1)), label="Id(x)",
 # caso, tenemos $F^2(x)=F(F(x))$, y denotaremos a los puntos de periodo 2 como
 # $x_0$ y $x_1$. Entonces, usando la regla de la cadena obtenemos:
 
-# \begin{equation}
-# \frac{\textrm{d}F^2(x_0)}{\textrm{d}x} = F'(F(x_0)) F'(x_0) = F'(x_1) F'(x_0).\tag{9}
-# \end{equation}
+# $$
+# \frac{\textrm{d}F^2(x_0)}{\textrm{d}x} = \frac{\textrm{d}F(F(x_0))}{\textrm{d}x} = F'(F(x_0)) F'(x_0) = F'(x_1) F'(x_0).\tag{9}
+# $$
 
 # De igual manera, considerando los puntos de periodo 3 tenemos,
 # $F^3(x)=F(F^2(x))$ y obtenemos:
 
-# \begin{equation}
+# $$
 # \frac{\textrm{d}F^3(x_0)}{\textrm{d}x} =
 # F'(F^2(x_0)) (F^2)'(x_0) = F'(x_2) F'(x_1) F'(x_0).\tag{10}
-# \end{equation}
+# $$
 
 # Esto se generaliza de manera evidente, y es fácil demostrar que se cumple
 
-# \begin{equation}
+# $$
 # \frac{\textrm{d}F^n(x_0)}{\textrm{d}x} = (F^n)'(x_0) =
 # F'(x_{n-1})\cdots F'(x_1)F'(x_0).\tag{11}
-# \end{equation}
+# $$
 
 # De esta última relación vemos que **todos** los iterados de una órbita periódica de
 # periodo $n$ tienen la misma derivada *respecto* al mapeo $F^n$, i.e.,
@@ -551,9 +554,9 @@ plot!(-1:1/16:1, identity, xaxis=("x", (-1.1, 1.1)), label="Id(x)",
 
 # El mapeo de desplazamiento (o doblamiento) de Bernoulli, es el mapeo
 # definido en $[0,1]\to[0,1]$ por
-# \begin{equation}
+# $$
 # x_{n+1} = \sigma(x_n) = 2x_n\mod 1.\tag{12}
-# \end{equation}
+# $$
 # La gráfica de este mapeo es muy sencilla: consiste en las dos rectas
 # paralelas de pendiente 2, $y=2x$ si $x\in [0,0.5)$ y,
 # $y=2x-1$ si $x\in [0.5,1]$, como se ilustra en la gráfica.
@@ -606,7 +609,7 @@ end
 # Es fácil obtener en este caso la fórmula explícita del mapeo de periodo 2,
 # $\sigma^2(x) = \sigma(\sigma(x))$.
 # Usando la definición, Eq. (12), es fácil obtener
-# \begin{equation}
+# $$
 # \sigma^2(x) =
 # \begin{cases}
 # 4x,  & 0\le x < 1/4,\\
@@ -614,7 +617,7 @@ end
 # 4x-2,& 1/2\le x < 3/4,\\
 # 4x-3,& 3/4\le x < 1,\\
 # \end{cases}\tag{13}
-# \end{equation}
+# $$
 # que de manera compacta corresponde a $\sigma^2(x)=4x\mod 1$.
 # A partir de $\sigma^2(x)=x$ y usando (13), obtenemos los puntos
 # de periodo 2, que corresponden a 0 (que es el punto fijo) y a $1/3$ y $2/3$.
@@ -732,9 +735,9 @@ end
 # entender la dinámica del mapeo.
 # Así, cualquier condición inicial $x_0\in [0,1)$ la podemos representar,
 # en su desarrollo *binario*, como
-# \begin{equation}
+# $$
 # x_0 = 0.a_1 a_2 a_3 \dots a_n \dots,\tag{14}
-# \end{equation}
+# $$
 # donde, dado que estamos usando base 2, tenemos que $a_k$ es 0 o 1. Por ejemplo, si $x_0 < 1/2$ tendremos que $a_1=0$, y si $x_0 \ge 1/2$ entonces $a_1=1$.
 
 # Ahora explotaremos la representación binaria (14) para entender la
@@ -752,9 +755,9 @@ end
 
 # Como consecuencia de lo anterior, la representación del $n$-ésimo
 # iterado corresponde a
-# \begin{equation}
+# $$
 # x_n = \sigma^n(x_0) = 0.a_{n+1} a_{n+2} \dots.\tag{15}
-# \end{equation}
+# $$
 
 # La Eq. (15) nos permite entender la dinámica de manera muy precisa,
 # y también los resultados numéricos.
