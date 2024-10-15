@@ -47,3 +47,4 @@
 # sino 1/3 de la distancia entre el vértice elegido al azar y el iterado
 # $Y_n$.
 #
+
