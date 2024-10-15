@@ -17,6 +17,7 @@
 #
 # NOTA: La parte `a` y `b` la pueden lograr con una función; si bien esto es cómodo
 # pueden ir paso a paso.
+#
 # ---
 #
 #  ## 2.
@@ -37,3 +38,12 @@
 # $Y_r$, guardando cada uno de los iterados.
 #
 # e. Grafiquen todos los iterados $Y_n$ que guardaron, considerando muuuuchos puntos.
+# 
+# ---
+#
+# ## 3.
+#
+# Repitan el ejercicio anterior usando ahora, no el punto medio,
+# sino 1/3 de la distancia entre el vértice elegido al azar y el iterado
+# $Y_n$.
+#
