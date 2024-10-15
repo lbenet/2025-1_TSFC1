@@ -38,7 +38,7 @@
 # $Y_r$, guardando cada uno de los iterados.
 #
 # e. Grafiquen todos los iterados $Y_n$ que guardaron, considerando muuuuchos puntos.
- 
+
 # ---
 #
 # ## 3.
