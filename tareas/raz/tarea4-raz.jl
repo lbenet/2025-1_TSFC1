@@ -2,6 +2,9 @@
 
 # --- Ejercicio 1 ---
 
+import Pkg
+Pkg.activate("..")
+
 using Plots
 N = 500_000
 zs = [ComplexF64(2rand()-1, 2rand()-1) for i in 1:N];
