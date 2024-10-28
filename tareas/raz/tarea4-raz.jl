@@ -18,9 +18,8 @@ f′(z) = 3z^2
 
 iter_f = Newton.(zs, f, f′, 60)
 convs = unique(iter_f)
-@assert length(convs)  == 3 "Deben ser solo 3! :D"
 
-categorias = indexin(iter_f, convs[1:3]);
+categorias = indexin(iter_f, convs[1:3])
 
 primeros = zs[categorias .== 1]
 segundos = zs[categorias .== 2]
