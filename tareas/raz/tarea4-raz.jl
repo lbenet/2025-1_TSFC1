@@ -4,7 +4,7 @@
 
 using Plots
 N = 500_000
-zs = [ComplexF32(2rand()-1, 2rand()-1) for i in 1:N];
+zs = [ComplexF64(2rand()-1, 2rand()-1) for i in 1:N];
 
 function Newton(z_n, f, f′, n)
     for i in 1:n
@@ -20,7 +20,7 @@ iter_f = Newton.(zs, f, f′, 60)
 convs = unique(iter_f)
 @assert length(convs)  == 3 "Deben ser solo 3! :D"
 
-categorias = indexin(iter_f, convs);
+categorias = indexin(iter_f, convs[1:3]);
 
 primeros = zs[categorias .== 1]
 segundos = zs[categorias .== 2]
