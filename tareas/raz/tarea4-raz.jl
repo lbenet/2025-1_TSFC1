@@ -5,7 +5,7 @@
 import Pkg
 Pkg.activate("..")
 
-using Plots
+using GLMakie
 N = 500_000
 zs = [ComplexF64(2rand()-1, 2rand()-1) for i in 1:N];
 
@@ -28,12 +28,12 @@ primeros = zs[categorias .== 1]
 segundos = zs[categorias .== 2]
 terceros = zs[categorias .== 3]
 
-p = scatter(primeros, label = "", title = "Convergencias del Mapeo de Newton", markersize = 1, markerstrokewidth = 0, color = RGB(0.255,0.412,0.847));
-scatter!(p, segundos, label = "", markersize = 1, markerstrokewidth = 0, color = RGB(0.584, 0.345, 0.698));
-scatter!(p, terceros, label = "", markersize = 1, markerstrokewidth = 0, color = RGB(0.133, 0.596, 0.149))
+fig, ax, plt = scatter(Point2.(real.(primeros), imag.(primeros)), label = "", markersize = 1, color = RGBf(0.255,0.412,0.847))
+scatter!(ax, Point2.(real.(segundos), imag.(segundos)), label = "", markersize = 1, color = RGBf(0.584, 0.345, 0.698))
+scatter!(ax, Point2.(real.(terceros), imag.(terceros)), label = "", markersize = 1, color = RGBf(0.133, 0.596, 0.149))
 
 # --- Ejercicio 2 ---
-using Plots
+using GLMakie
 
 p1((x, y)) = (0.0, 0.16y)
 p2((x, y)) = (0.85x + 0.04y, -0.04x + 0.85y + 1.6)
@@ -63,10 +63,6 @@ for _ in 1:50
 end
 
 scatter(first.(bs), last.(bs), 
-    title = "Puntos fijos de B(x,y)",
-    label = "", xlabel = "x", ylabel = "y",
-    markerstrokecolor = :green,
-    markerstrokewidth=1,
-    markersize = 1.5,
-    markerstrokesize=1)
+    label = "",
+    markersize = 1.5)
 
